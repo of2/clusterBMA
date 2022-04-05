@@ -1,0 +1,14 @@
+Package: clusterBMA
+Type: Package
+Title: Bayesian Model Averaging for Clustering
+Version: 0.1.0
+Author: Owen Forbes
+Maintainer: Owen Forbes <owen.forbes@hdr.qut.edu.au>
+Description: Bayesian model averaging (BMA) for clustering - implements methods in accompanying publication "clusterBMA: Bayesian Model Averaging for Clustering" (CITATION)
+    The main function, clusterBMA::clusterBMA() takes as an input argument a list of cluster allocation probability matrices. Each item in the list needs to be a NxK matrix A_m for each input algorithm. For 'soft' clustering algorithms like ClusterR::GMM(), this is an available output. For 'hard' clustering algorithms like k-means, a helper function clusterBMA::hard_to_prob_fn() can be used to convert a vector of cluster allocation labels to a NxK matrix of cluster allocation probabilities. The number of clusters K can vary between input models.
+License: MIT License
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
