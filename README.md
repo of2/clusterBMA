@@ -12,11 +12,26 @@ To get started in R, run:
 devtools::install_github("of2/clusterBMA")
 ```
 
-To install required Python 3.7.9 & Tensorflow 1.15.5 in dedicated Conda environment, run:
+This should also install the dependencies:
+    reticulate,
+    tensorflow,
+    clusterCrit,
+    Hmisc,
+    pheatmap
+
+If you have not previously installed miniconda, please run:
+
+```
+reticulate::install_miniconda()
+```
+
+**To install required Python 3.7.9 & Tensorflow 1.15.5 in dedicated Conda environment, run:**
 
 ```
 clusterBMA::clusterBMA_initial_python_setup()
 ```
+
+**and then restart your R session.**
 
 
 

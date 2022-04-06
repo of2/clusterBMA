@@ -8,9 +8,9 @@ clusterBMA_initial_python_setup <- function(){
 
   # NEED TO CHECK IF MINICONDA IS INSTALLED HERE
 
-  print("Installing miniconda")
-
-  reticulate::install_miniconda()
+  # print("Installing miniconda")
+  #
+  # reticulate::install_miniconda()
 
   print("Setting up conda environment 'clusterBMA-pyenv' with Python 3.7.9")
 
