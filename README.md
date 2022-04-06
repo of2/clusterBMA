@@ -15,11 +15,11 @@ devtools::install_github("of2/clusterBMA")
 ```
 
 This should also install the dependencies:
-    reticulate,
-    tensorflow,
-    clusterCrit,
-    Hmisc,
-    pheatmap
+    `reticulate`,
+    `tensorflow`,
+    `clusterCrit`,
+    `Hmisc`, and 
+    `pheatmap`
 
 If you have not previously installed `miniconda`, please run:
 
