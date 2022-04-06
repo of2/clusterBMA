@@ -1,8 +1,8 @@
 # clusterBMA: Bayesian Model Averaging for Clustering
 
-### ALPHA VERSION / WORK IN PROGRESS - this will continue to be iterated and expanded with better documentation, vignettes and bug fixes in the coming months.
+##### ALPHA VERSION / WORK IN PROGRESS - this will continue to be iterated and expanded with better documentation, vignettes and bug fixes in the coming months.
 
-This R package provides tools for Bayesian Model Averaging (BMA) to combine results across multiple different clustering algorithms. BMA offers some attractive benefits over other existing approaches for combining multiple sets of clustering results. Benefits include intuitive probabilistic interpretation of an overall cluster structure integrated across multiple sets of clustering results, with quantification of model-based uncertainty.
+`clusterBMA` is an R package for Bayesian Model Averaging (BMA) to combine multiple sets of clustering results for a given dataset, that can accommodate inputs from multiple different clustering algorithms. BMA offers some attractive benefits over other existing approaches for combining multiple sets of clustering results. Benefits include intuitive probabilistic interpretation of an overall cluster structure integrated across multiple sets of clustering results, with quantification of model-based uncertainty.
 
 The motivation and methods for this approach are described in an accompanying publication: **CITATION HERE**
 
