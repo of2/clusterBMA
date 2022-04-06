@@ -8,8 +8,10 @@ The motivation and methods for this approach are described in an accompanying pu
 
 -----------------------------------------------------------------------------------------
 
-### To get started in R, run:
+### To get started in R:
 
+
+**First, install this package using `devtools`**
 ```
 devtools::install_github("of2/clusterBMA")
 ```
@@ -21,19 +23,21 @@ This should also install the dependencies:
     `Hmisc`, and 
     `pheatmap`
 
-If you have not previously installed `miniconda`, please run:
+**If you have not previously installed** `miniconda`, **please run:**
 
 ```
 reticulate::install_miniconda()
 ```
 
-**To install required Python 3.7.9 & Tensorflow 1.15.5 in dedicated Conda environment, run:**
+**To install required Python 3.7.9 & Tensorflow 1.15.5 in a dedicated `conda` environment "clusterBMA-pyenv", run:**
 
 ```
 clusterBMA::clusterBMA_initial_python_setup()
 ```
 
 **and then restart your R session.**
+
+Once you have followed steps
 
 
 -----------------------------------------------------------------------------------------
