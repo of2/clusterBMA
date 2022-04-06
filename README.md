@@ -63,16 +63,13 @@ test_bma_results <- clusterBMA(input_data = test_data, cluster_prob_matrices = i
 
 # add BMA outputs as columns onto original dataframe
 test_data <- cbind(test_data,test_bma_results[[3]])
-```
 
-## Example plot showing BMA combined results from k-means and GMM (simulated data)
-### Larger points show greater across-model uncertainty in cluster allocation
-
-![Example BMA plot - k-means and GMM combined (simulated data)](https://github.com/of2/clusterBMA/blob/main/example_BMA_plot.png?raw=true)
-
-
-# plot BMA cluster results - larger points have greater uncertainty
+# Example plot BMA cluster results - larger points have greater uncertainty
 
 test_plot_BMA_uncertainty <- plot_ly(data=test_data,x=test_data[,1],y=test_data[,2],color=factor(test_data$alloc_vector),colors = RColorBrewer::brewer.pal(5,"Dark2"), size=test_data$alloc_uncertainty,marker=list(sizeref=0.3, sizemode="area"))
 test_plot_BMA_uncertainty
 ```
+## Example plot showing BMA combined results from k-means and GMM (simulated data)
+### Larger points show greater across-model uncertainty in cluster allocation
+
+![Example BMA plot - k-means and GMM combined (simulated data)](https://github.com/of2/clusterBMA/blob/main/example_BMA_plot.png?raw=true)
