@@ -21,6 +21,7 @@ clusterBMA_initial_python_setup <- function(){
   #  )
 
   reticulate::py_install(
+    packages="numpy",
     envname = "clusterBMA-pyenv",
     method = "conda",
     conda = "auto",
