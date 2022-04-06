@@ -28,6 +28,12 @@
 
 clusterBMA <- function(input_data,cluster_prob_matrices,n_final_clust){
 
+  # suppress warnings (coming up because of outdated python syntax but it still works fine)
+  oldw <- getOption("warn")
+  options(warn = -1)
+
+
+
   clusterBMA_use_condaenv() #specify conda environment to use
 
   if(class(input_data) != "data.frame") {input_data <- as.data.frame(input_data)}
@@ -75,6 +81,7 @@ clusterBMA <- function(input_data,cluster_prob_matrices,n_final_clust){
   #bma_allocs_table <- bma_results[[4]]
 
 
+  options(warn = oldw)
 
   return(bma_results)
 }
