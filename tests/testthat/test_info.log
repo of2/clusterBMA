@@ -1,0 +1,17 @@
+Theoretical separation information data frame>>>>>>>>>>>
+
+cluster nearestClust nearestSep farthestClust farthestSep medianSep fileName
+1	3	0.15	2	0.305	0.227	test_1
+2	5	0.15	3	0.349	0.298	test_1
+3	1	0.15	2	0.349	0.197	test_1
+4	5	0.15	2	0.291	0.221	test_1
+5	4	0.15	3	0.197	0.15	test_1
+
+Empirical separation information data frame>>>>>>>>>>>
+
+cluster nearestClust nearestSep farthestClust farthestSep medianSep fileName
+1	3	0.121	4	0.487	0.344	test_1
+2	5	0.159	3	0.327	0.289	test_1
+3	1	0.121	4	0.495	0.248	test_1
+4	5	0.156	3	0.495	0.382	test_1
+5	4	0.156	1	0.389	0.164	test_1
