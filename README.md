@@ -21,7 +21,7 @@ This should also install the dependencies:
     Hmisc,
     pheatmap
 
-If you have not previously installed miniconda, please run:
+If you have not previously installed `miniconda`, please run:
 
 ```
 reticulate::install_miniconda()
