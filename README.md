@@ -23,11 +23,15 @@ This should also install the dependencies:
     `Hmisc`, and 
     `pheatmap`
 
+--
+
 **If you have not previously installed** `miniconda`, **please run:**
 
 ```
 reticulate::install_miniconda()
 ```
+
+--
 
 **To install required versions of Python (3.7.9) & Tensorflow (1.15.5) in a dedicated `conda` environment "clusterBMA-pyenv", run:**
 
