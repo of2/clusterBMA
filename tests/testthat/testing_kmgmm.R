@@ -1,5 +1,9 @@
 #test
 
+library(clusterGeneration)
+library(ClusterR)
+library(plotly)
+
 #simulate data
 test_data <- clusterGeneration::genRandomClust(numClust=5,sepVal=0.15,numNonNoisy=2,numNoisy=0,clustSizes=c(rep(100,5)),numReplicate = 1,clustszind = 3)
 
@@ -32,7 +36,8 @@ test_bma_results <- clusterBMA(input_data = test_data, cluster_prob_matrices = i
 test_data <- cbind(test_data,test_bma_results[[3]])
 
 
-library(plotly)
+# plot BMA cluster results - larger points have greater uncertainty
+
 test_plot_BMA_uncertainty <- plot_ly(data=test_data,x=test_data[,1],y=test_data[,2],color=factor(test_data$alloc_vector),colors = RColorBrewer::brewer.pal(5,"Dark2"), size=test_data$alloc_uncertainty,marker=list(sizeref=0.3, sizemode="area"))
 test_plot_BMA_uncertainty
 
