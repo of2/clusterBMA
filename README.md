@@ -8,7 +8,7 @@ The motivation and methods for this approach are described in an accompanying pu
 
 -----------------------------------------------------------------------------------------
 
-### To get started in R:
+# To get started in R:
 
 
 **First, install this package using `devtools`**
