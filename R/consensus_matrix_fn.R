@@ -1,5 +1,5 @@
 
-consensus_matrix_fn <- function(sim_mat_list,algo_weights,n_final_clust){
+consensus_matrix_fn <- function(sim_mat_list,algo_weights,n_final_clust,prior_vec){
 
   # stack similarity matrices into array
 
@@ -14,7 +14,14 @@ consensus_matrix_fn <- function(sim_mat_list,algo_weights,n_final_clust){
   # See this discussion on weighted variance https://r.789695.n4.nabble.com/Problem-with-Weighted-Variance-in-Hmisc-td826437.html
   # essential to use normwt=T for Hmisc::wtd.var below
 
-  consensus_matrix <- apply(ar1, c(1, 2), function(x) Hmisc::wtd.mean(x,weights=algo_weights))
+
+  # multiply BMA weights by prior weights and normalise
+
+  combined_algo_prior_weights <- algo_weights * prior_vec
+
+  combined_algo_prior_weights <- combined_algo_prior_weights/sum(combined_algo_prior_weights)
+
+  consensus_matrix <- apply(ar1, c(1, 2), function(x) Hmisc::wtd.mean(x,weights=combined_algo_prior_weights))
 
   consensus_matrix
 
@@ -32,6 +39,6 @@ consensus_matrix_fn <- function(sim_mat_list,algo_weights,n_final_clust){
   bma_table <- bma_prob_to_hard[[2]]
 
 
-  return(list(consensus_matrix,bma_probs,bma_labels_df,bma_table))
+  return(list(consensus_matrix,bma_probs,bma_labels_df,bma_table,algo_weights,combined_algo_prior_weights))
   #print(consensus_dendro)
 }
