@@ -12,7 +12,7 @@ clusterBMA_initial_python_setup <- function(){
   #
   # reticulate::install_miniconda()
 
-  print("Setting up conda environment 'clusterBMA-pyenv' with Python 3.7.9")
+  print("Setting up conda environment 'clusterBMA-pyenv' with Python 3.7.9, numpy 1.18.5, and protobuf 3.20.1")
 
   # reticulate::conda_create(
   #    envname = "clusterBMA-pyenv",
@@ -21,7 +21,7 @@ clusterBMA_initial_python_setup <- function(){
   #  )
 
   reticulate::py_install(
-    packages="numpy",
+    packages=c("numpy==1.18.5","protobuf==3.20.1"),
     envname = "clusterBMA-pyenv",
     method = "conda",
     conda = "auto",
