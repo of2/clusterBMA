@@ -35,7 +35,7 @@ reticulate::install_miniconda()
 
 --
 
-**To install required versions of Python (3.7.9) & Tensorflow (1.15.5) in a dedicated `conda` environment "clusterBMA-pyenv", run:**
+**To install required versions of Python (3.7.9) & Tensorflow (1.15.5) in a dedicated `conda` environment "clusterBMA-pyenv", with dependencies numpy (v1.18.5) and protobuf (v3.20.1) run:**
 
 ```
 clusterBMA::clusterBMA_initial_python_setup()
