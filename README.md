@@ -2,6 +2,8 @@
 
 # v 0.1.1
 
+PREPRINT HERE: https://arxiv.org/abs/2209.04117
+
 All code and instructions are provided at https://github.com/of2/clusterBMA
 
 ##### ALPHA VERSION / WORK IN PROGRESS - this will continue to be iterated and expanded with better documentation, vignettes and bug fixes in the coming months.
