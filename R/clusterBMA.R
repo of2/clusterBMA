@@ -26,7 +26,7 @@
 # # save cluster allocation uncertainty for plotting DF
 # input_data$bma_cluster_uncertainty <- bma_cluster_labels_df$alloc_uncertainty
 
-clusterBMA <- function(input_data,cluster_prob_matrices,n_final_clust,prior_weights="equal"){
+clusterBMA <- function(input_data,cluster_prob_matrices,n_final_clust,prior_weights="equal", wt_crit_name="Xie_Beni"){
 
   n_models <- length(cluster_prob_matrices)
 
@@ -76,8 +76,10 @@ clusterBMA <- function(input_data,cluster_prob_matrices,n_final_clust,prior_weig
 
 
   # calculate weights
+  # Changing to try using new_weight_fn
 
-  bma_weights_df <- ch_xb_weight_fn(input_data=input_data,cluster_label_df = cluster_labels_df,n_sols = n_models)
+  bma_weights_df <- new_weight_fn(input_data=input_data,cluster_label_df = cluster_labels_df,n_sols = n_models, wt_crit_name)
+  #bma_weights_df <- ch_xb_weight_fn(input_data=input_data,cluster_label_df = cluster_labels_df,n_sols = n_models)
 
 
   # calculate BMA results!
