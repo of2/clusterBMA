@@ -40,5 +40,7 @@ new_weight_fn <- function(input_data,cluster_label_df,n_sols,wt_crit_name="Xie_B
   } else {print ("set wt_crit_direction to 'max' if weighting internal validation criterion should be maximised, or 'min' if it should be minimised")}
   
   
+  names(out_df)[1] <- wt_crit_name
+  
   return(out_df)
 }
