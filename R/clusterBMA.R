@@ -78,7 +78,7 @@ clusterBMA <- function(input_data,cluster_prob_matrices,n_final_clust,prior_weig
   # calculate weights
   # Changing to try using new_weight_fn
 
-  bma_weights_df <- new_weight_fn(input_data=input_data,cluster_label_df = cluster_labels_df,n_sols = n_models, wt_crit_name)
+  bma_weights_df <- new_weight_fn(input_data=input_data,cluster_label_df = cluster_labels_df,n_sols = n_models, wt_crit_name_2 = wt_crit_name, wt_crit_direction_2 = wt_crit_direction)
   #bma_weights_df <- ch_xb_weight_fn(input_data=input_data,cluster_label_df = cluster_labels_df,n_sols = n_models)
 
 
