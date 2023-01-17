@@ -1,5 +1,7 @@
 # Needs to be updated to allow choice of metric - from clusterCrit
 
+# Also needs to account for some metrics want to be maximised, some want to be minimised!!
+
 # clusterCrit::getCriteriaNames(isInternal=T)
 # [1] "Ball_Hall"         "Banfeld_Raftery"   "C_index"           "Calinski_Harabasz" "Davies_Bouldin"    "Det_Ratio"         "Dunn"             
 # [8] "Gamma"             "G_plus"            "GDI11"             "GDI12"             "GDI13"             "GDI21"             "GDI22"            
@@ -10,7 +12,7 @@
 
 
 # Expects cluster_labels to be data frame with columns of cluster labels from different algorithms (hard projection from soft algos), and n_sols to be the number of solutions input
-new_weight_fn <- function(input_data,cluster_label_df,n_sols,wt_crit_name="Xie_Beni"){
+new_weight_fn <- function(input_data,cluster_label_df,n_sols,wt_crit_name="Xie_Beni",wt_crit_direction = "max"){
   
   out_df <- data.frame(crit = NA, W_m = NA)
   
@@ -27,9 +29,15 @@ new_weight_fn <- function(input_data,cluster_label_df,n_sols,wt_crit_name="Xie_B
   #remove NA row
   out_df <- out_df[-1,]
   
+  if(wt_crit_direction=="max"){
   for (i in 1:n_sols){
     out_df[i,"W_m"] <- out_df$crit[i]/sum(out_df$crit)
   }
+  } else if(wt_crit_direction=="min") {
+    for (i in 1:n_sols){
+      out_df[i,"W_m"] <- (1/out_df$crit[i])/sum(1/out_df$crit)
+    }
+  } else {print ("set wt_crit_direction to 'max' if weighting internal validation criterion should be maximised, or 'min' if it should be minimised")}
   
   
   return(out_df)
