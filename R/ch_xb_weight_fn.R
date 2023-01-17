@@ -26,7 +26,8 @@ ch_xb_weight_fn <- function(input_data,cluster_label_df,n_sols){
   out_df$W_each <- out_df$XB_w + out_df$CH_w
 
   for (i in 1:n_sols){
-    out_df[i,"W_m"] <- out_df$W_each[i]/sum(out_df$W_each)
+    #out_df[i,"W_m"] <- out_df$W_each[i]/sum(out_df$W_each) #
+    out_df[i,"W_m"] <- out_df$XB_w
   }
 
   return(out_df)
