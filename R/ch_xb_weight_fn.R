@@ -1,4 +1,6 @@
-# Returns c(Xie-Beni,Calinski-Harabasz)
+# Needs to be updated to allow choice of metric - from clusterCrit
+
+
 # Expects cluster_labels to be data frame with columns of cluster labels from different algorithms (hard projection from soft algos), and n_sols to be the number of solutions input
 ch_xb_weight_fn <- function(input_data,cluster_label_df,n_sols){
 
@@ -25,10 +27,13 @@ ch_xb_weight_fn <- function(input_data,cluster_label_df,n_sols){
 
   out_df$W_each <- out_df$XB_w + out_df$CH_w
 
-  for (i in 1:n_sols){
-    out_df[i,"W_m"] <- out_df$W_each[i]/sum(out_df$W_each) #
-    #out_df[i,"W_m"] <- out_df$XB_w
-  }
+  out_df$W_m <- out_df$XB_w
+
+
+
+  # for (i in 1:n_sols){
+  #   out_df[i,"W_m"] <- out_df$W_each[i]/sum(out_df$W_each) #
+  # }
 
   return(out_df)
 }
