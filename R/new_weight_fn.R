@@ -12,7 +12,7 @@
 
 
 # Expects cluster_labels to be data frame with columns of cluster labels from different algorithms (hard projection from soft algos), and n_sols to be the number of solutions input
-new_weight_fn <- function(input_data,cluster_label_df,n_sols,wt_crit_name_2=wt_crit_name,wt_crit_direction_2 = wt_crit_direction){
+new_weight_fn <- function(input_data,cluster_label_df,n_sols,wt_crit_name_2,wt_crit_direction_2){
   
   out_df <- data.frame(crit = NA, W_m = NA)
   
