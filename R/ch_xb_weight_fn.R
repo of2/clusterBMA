@@ -21,7 +21,7 @@ ch_xb_weight_fn <- function(input_data,cluster_label_df,n_sols){
   out_df <- out_df[-1,]
 
   for (i in 1:n_sols){
-    out_df[i,"XB_w"] <- out_df$XB[i]/sum(out_df$XB)
+    out_df[i,"XB_w"] <- out_df$XB[i]/sum(out_df$XB) #WRONG!!! XB SHOULD BE MINIMISED
     out_df[i,"CH_w"] <- (1/out_df$CH[i])/sum(1/out_df$CH)
   }
 
