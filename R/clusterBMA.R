@@ -26,7 +26,7 @@
 # # save cluster allocation uncertainty for plotting DF
 # input_data$bma_cluster_uncertainty <- bma_cluster_labels_df$alloc_uncertainty
 
-clusterBMA <- function(input_data,cluster_prob_matrices,n_final_clust,prior_weights="equal", wt_crit_name="Xie_Beni",wt_crit_direction = "max"){
+clusterBMA <- function(input_data,cluster_prob_matrices,n_final_clust,prior_weights="equal", wt_crit_name="Xie_Beni",wt_crit_direction = "min"){
 
   n_models <- length(cluster_prob_matrices)
 
