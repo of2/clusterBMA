@@ -12,7 +12,7 @@
 
 
 # Expects cluster_labels to be data frame with columns of cluster labels from different algorithms (hard projection from soft algos), and n_sols to be the number of solutions input
-new_weight_fn <- function(input_data,cluster_label_df,n_sols,wt_crit_name=wt_crit_name,wt_crit_direction = wt_crit_direction){
+new_weight_fn <- function(input_data,cluster_label_df,n_sols,wt_crit_name_2=wt_crit_name,wt_crit_direction_2 = wt_crit_direction){
   
   out_df <- data.frame(crit = NA, W_m = NA)
   
@@ -20,7 +20,7 @@ new_weight_fn <- function(input_data,cluster_label_df,n_sols,wt_crit_name=wt_cri
   input_data <- as.matrix(input_data)
   
   for (i in 1:n_sols){
-    wt_temp <- clusterCrit::intCriteria(traj=input_data,part=as.integer(cluster_label_df[,i]),crit=c(wt_crit_name))
+    wt_temp <- clusterCrit::intCriteria(traj=input_data,part=as.integer(cluster_label_df[,i]),crit=c(wt_crit_name_2))
 
     row_temp <- c(wt_temp[[1]],NA)
     out_df <- rbind(out_df,row_temp)
@@ -29,15 +29,15 @@ new_weight_fn <- function(input_data,cluster_label_df,n_sols,wt_crit_name=wt_cri
   #remove NA row
   out_df <- out_df[-1,]
   
-  if(wt_crit_direction=="max"){
+  if(wt_crit_direction_2=="max"){
   for (i in 1:n_sols){
     out_df[i,"W_m"] <- out_df$crit[i]/sum(out_df$crit)
   }
-  } else if(wt_crit_direction=="min") {
+  } else if(wt_crit_direction_2=="min") {
     for (i in 1:n_sols){
       out_df[i,"W_m"] <- (1/out_df$crit[i])/sum(1/out_df$crit)
     }
-  } else {print ("set wt_crit_direction to 'max' if weighting internal validation criterion should be maximised, or 'min' if it should be minimised")}
+  } else {print ("set wt_crit_direction_2 to 'max' if weighting internal validation criterion should be maximised, or 'min' if it should be minimised")}
   
   
   names(out_df)[1] <- wt_crit_name
