@@ -36,7 +36,7 @@ new_weight_fn <- function(input_data,cluster_label_df,n_sols,wt_crit_name,wt_cri
   } else if(wt_crit_direction=="min") {
     for (i in 1:n_sols){
       #out_df[i,"W_m"] <- (1/out_df$crit[i])/sum(1/out_df$crit)
-      out_df[i,"W_m"] <- (1/exp(out_df$crit[i]))/sum(1/exp(out_df$crit[i])) #trying exponential of negative - treating crit as loss function
+      out_df[i,"W_m"] <- (1/exp(out_df$crit[i]))/sum(1/exp(out_df$crit)) #trying exponential of negative - treating crit as loss function
 
     }
   } else {print ("set wt_crit_direction to 'max' if weighting internal validation criterion should be maximised, or 'min' if it should be minimised")}
