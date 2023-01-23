@@ -25,7 +25,7 @@ consensus_matrix_fn <- function(sim_mat_list,algo_weights,n_final_clust,prior_ve
 
   consensus_matrix
 
-  pheatmap::pheatmap(consensus_matrix, treeheight_row = 0, treeheight_col = 0, main = "BMA - Consensus matrix")
+  consensus_matrix_heatmap <- pheatmap::pheatmap(consensus_matrix, treeheight_row = 0, treeheight_col = 0, main = "BMA - Consensus matrix")
 
 
   consensus_SSMF <- SimplexClust(S=consensus_matrix,G=5)
@@ -38,7 +38,9 @@ consensus_matrix_fn <- function(sim_mat_list,algo_weights,n_final_clust,prior_ve
 
   bma_table <- bma_prob_to_hard[[2]]
 
+  consensus_matrix_heatmap
 
-  return(list(consensus_matrix,bma_probs,bma_labels_df,bma_table,algo_weights,combined_algo_prior_weights))
+
+  return(list(consensus_matrix,bma_probs,bma_labels_df,bma_table,algo_weights,combined_algo_prior_weights,consensus_matrix_heatmap))
   #print(consensus_dendro)
 }
