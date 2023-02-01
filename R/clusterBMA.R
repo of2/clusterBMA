@@ -45,7 +45,8 @@ clusterBMA <- function(input_data,cluster_prob_matrices,n_final_clust,prior_weig
 
   clusterBMA_use_condaenv() #specify conda environment to use
 
-  if(class(input_data) != "data.frame") {input_data <- as.data.frame(input_data)}
+  #coerce input data to data frame
+  input_data <- as.data.frame(input_data)
 
   conda_existing <- reticulate::conda_list()
   if(!("clusterBMA-pyenv"%in% conda_existing$name)){
