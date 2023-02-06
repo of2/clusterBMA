@@ -21,7 +21,9 @@ clusterBMA_initial_python_setup <- function(){
   #  )
 
   reticulate::py_install(
-    packages=c("numpy==1.18.5","protobuf==3.20.1"),
+    packages=c("numpy==1.18.5",
+               "protobuf==3.20.1",
+               "tensorflow=1.15.5"),
     envname = "clusterBMA-pyenv",
     method = "conda",
     conda = "auto",
@@ -30,7 +32,7 @@ clusterBMA_initial_python_setup <- function(){
 
   print("Installing TensorFlow v1.15.5 in conda environment 'clusterBMA-pyenv'")
 
-  tensorflow::install_tensorflow(method="conda",version = "1.15.5",envname = "clusterBMA-pyenv",python_version = "3.7.9")
+  #tensorflow::install_tensorflow(method="conda",version = "1.15.5",envname = "clusterBMA-pyenv",python_version = "3.7.9")
 
   reticulate::use_condaenv(condaenv = "clusterBMA-pyenv", required = TRUE)
   tensorflow::use_condaenv(condaenv="clusterBMA-pyenv", required = T)
