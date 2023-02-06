@@ -43,15 +43,15 @@ clusterBMA <- function(input_data,cluster_prob_matrices,n_final_clust,prior_weig
 
 
 
-  clusterBMA_use_condaenv() #specify conda environment to use
+  clusterBMA_use_virtualenv() #specify conda environment to use
 
   #coerce input data to data frame
   input_data <- as.data.frame(input_data)
 
-  conda_existing <- reticulate::conda_list()
-  if(!("clusterBMA-pyenv"%in% conda_existing$name)){
-    stop("Please run clusterBMA_initial_python_setup() first to install Python 3.7.9 and Tensorflow 1.15.5 in a dedicated miniconda environment, then restart your R session. You may want to save any data/variables in the environment before installing & restarting.")
-    }
+  # conda_existing <- reticulate::conda_list()
+  # if(!("clusterBMA-pyenv"%in% conda_existing$name)){
+  #   stop("Please run clusterBMA_initial_python_setup() first to install Python 3.7.9 and Tensorflow 1.15.5 in a dedicated miniconda environment, then restart your R session. You may want to save any data/variables in the environment before installing & restarting.")
+  #   }
 
 
 
