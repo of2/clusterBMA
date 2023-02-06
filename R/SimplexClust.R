@@ -17,7 +17,7 @@ SimplexClust<- function(S, G, lambda = 1, eps= 1E-2,steps=5000, choice_loss = "K
 #   reticulate::use_condaenv(condaenv = "clusterBMA-pyenv", required = TRUE)
 #   tensorflow::use_condaenv(condaenv="clusterBMA-pyenv", required = T)
 
-  #library("tensorflow")
+  library("tensorflow")
 
   tf$compat$v1$disable_v2_behavior
 
