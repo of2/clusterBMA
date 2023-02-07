@@ -1,6 +1,13 @@
 # clusterBMA: Bayesian Model Averaging for Clustering
 
-# v 0.1.1
+
+# UNDER CONSTRUCTION - currently decommissioned while TensorFlow syntax is updated to more recent version (due to version support being dropped for TensorFlow 1.15 from reticulate and tensorflow packages in R)
+
+
+
+
+
+#### v 0.2.0 in progress
 
 ## PREPRINT HERE: https://arxiv.org/abs/2209.04117
 

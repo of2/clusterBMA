@@ -23,29 +23,39 @@ clusterBMA_initial_python_setup <- function(){
   #    packages=("tensorflow")
   #  )
 
-  # OLD v2
+ #OLD v2
   # reticulate::py_install(
   #   packages=c("numpy==1.18.5",
   #              "protobuf==3.20.1",
-  #              "tensorflow=1.15.5"),
+  #              "tensorflow=1.15.5"), #need to use newer version of TF (and python?)
   #   envname = "clusterBMA-pyenv",
   #   method = "conda",
   #   conda = "auto",
   #   python_version = "3.7.9"
   # )
 
-  cbma_pyversion <- "3.7.9"
-  reticulate::install_python(version=cbma_pyversion)
-  reticulate::virtualenv_create(envname = "clusterBMA-pyenv2", python_version = cbma_pyversion, packages=c("numpy==1.18.5","protobuf==3.20.1","tensorflow"))
+
+  # v3 trying updated packages
+
+  reticulate::py_install(
+    packages=c("numpy",
+               "protobuf",
+               "tensorflow"), #need to use newer version of TF (and python?)
+    envname = "clusterBMA-pyenv_newpkgs",
+    method = "conda",
+    conda = "auto",
+    python_version = "3.10"
+  )
+
 
   #print("Installing TensorFlow v1.15.5 in virtual environment 'clusterBMA-pyenv'")
 
-  #tensorflow::install_tensorflow(version = "1.15.5",envname = "clusterBMA-pyenv2",python_version = "3.7.9")
+  tensorflow::install_tensorflow(envname = "clusterBMA-pyenv_newpkgs",python_version = "3.10")
 
   #tensorflow::install_tensorflow(method="conda",version = "1.15.5",envname = "clusterBMA-pyenv",python_version = "3.7.9")
 
-  reticulate::use_virtualenv(virtualenv = "clusterBMA-pyenv2", required = TRUE)
-  tensorflow::use_virtualenv(virtualenv="clusterBMA-pyenv2", required = TRUE)
+  reticulate::use_condaenv(condaenv = "clusterBMA-pyenv_newpkgs", required = TRUE)
+  tensorflow::use_condaenv(condaenv="clusterBMA-pyenv_newpkgs", required = TRUE)
 
   reticulate::py_config()
 
