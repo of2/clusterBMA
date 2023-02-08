@@ -1,11 +1,16 @@
 # clusterBMA: Bayesian Model Averaging for Clustering
 
+`clusterBMA` is an R package for Bayesian Model Averaging (BMA) to combine multiple sets of clustering results for a given dataset, that can combine results across multiple different clustering algorithms. BMA offers some attractive benefits over other existing approaches for combining multiple sets of clustering results. Benefits include intuitive probabilistic interpretation of an overall cluster structure integrated across multiple sets of clustering results, with quantification of model-based uncertainty.
+
+The motivation and methods for this approach are described in an accompanying paper: https://arxiv.org/abs/2209.04117
+
 #### v 0.2.0
+
 Due to dropped support for TensorFlow v1.15 in reticulate and tensorflow packages: 
 - Updated conda environment to use Python v 3.10.9 and TensorFlow v2.11
 - Updated TF syntax in SimplexClust() to work with TF2
 
-## PREPRINT HERE: https://arxiv.org/abs/2209.04117
+## PREPRINT HERE:  https://arxiv.org/abs/2209.04117
 
 All code and instructions are provided at https://github.com/of2/clusterBMA
 
@@ -13,9 +18,6 @@ All code and instructions are provided at https://github.com/of2/clusterBMA
 
 ##### ALPHA VERSION / WORK IN PROGRESS - this will continue to be iterated and expanded with better documentation, vignettes and bug fixes in the coming months.
 
-`clusterBMA` is an R package for Bayesian Model Averaging (BMA) to combine multiple sets of clustering results for a given dataset, that can combine results across multiple different clustering algorithms. BMA offers some attractive benefits over other existing approaches for combining multiple sets of clustering results. Benefits include intuitive probabilistic interpretation of an overall cluster structure integrated across multiple sets of clustering results, with quantification of model-based uncertainty.
-
-The motivation and methods for this approach are described in an accompanying publication: **(citation to go here)**
 
 -----------------------------------------------------------------------------------------
 
