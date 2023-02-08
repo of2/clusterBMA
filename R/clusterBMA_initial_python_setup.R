@@ -12,7 +12,7 @@ clusterBMA_initial_python_setup <- function(){
   #
   # reticulate::install_miniconda()
 
-  print("Setting up virtual environment 'clusterBMA-pyenv' with Python 3.7.9, numpy 1.18.5, protobuf 3.20.1, and TensorFlow 1.15.5")
+  print("Setting up virtual environment 'clusterBMA-pyenv' with Python 3.10.9, TensorFlow 2.11, numpy, protobuf")
 
 
   # OLD v1
