@@ -1,8 +1,9 @@
 # clusterBMA: Bayesian Model Averaging for Clustering
 
-
-
-#### v 0.2.0 in progress
+#### v 0.2.0
+Due to dropped support for TensorFlow v1.15 in reticulate and tensorflow packages: 
+- Updated conda environment to use Python v 3.10.9 and TensorFlow v2.11
+- Updated TF syntax in SimplexClust() to work with TF2
 
 ## PREPRINT HERE: https://arxiv.org/abs/2209.04117
 
