@@ -26,7 +26,7 @@ SimplexClust<- function(S, G, lambda = 1, eps= 1E-2,steps=5000, choice_loss = "K
 
   N<- nrow(S)
   # create a simplex matrix
-  P0 <-  tf$math$softplus(tf$Variable(tf$random_uniform(shape(N,G), 0, 1)))
+  P0 <-  tf$math$softplus(tf$Variable(tf$random$uniform(shape(N,G), 0, 1)))
   P0sum<- tf$reduce_sum(P0,  axis=as.integer(1), keepdims=TRUE)
 
   # zero out the diagonal matrix in the A matrix
@@ -37,12 +37,12 @@ SimplexClust<- function(S, G, lambda = 1, eps= 1E-2,steps=5000, choice_loss = "K
   A = tf$matmul(P, P,transpose_b = T)
 
   S_tf = tf$cast(S,tf$float32)
-  logS_tf = tf$log(S_tf)
+  logS_tf = tf$math$log(S_tf)
 
   if(choice_loss == "KL"){
     # #KL loss: S||A
-    logRatio= - tf$log(A)
-    logRatioComp=  - tf$log(1.0-A)
+    logRatio= - tf$math$log(A)
+    logRatioComp=  - tf$math$log(1.0-A)
     loss_mat = tf$multiply( S_tf , logRatio ) + tf$multiply( 1.0- S_tf, logRatioComp)
   }
 
@@ -61,13 +61,13 @@ SimplexClust<- function(S, G, lambda = 1, eps= 1E-2,steps=5000, choice_loss = "K
 
   total_loss = loss +  lambda * rank_prior_loss  #+ relax_loss
 
-  optimizer <- tf$train$AdamOptimizer(eps)
+  optimizer <- tf$compat$v1$train$AdamOptimizer(eps)
 
   train <- optimizer$minimize(total_loss)
 
   # Launch the graph and initialize the variables.
-  sess = tf$Session()
-  sess$run(tf$global_variables_initializer())
+  sess = tf$compat$v1$Session()
+  sess$run(tf$compat$v1$global_variables_initializer())
 
   for (step in 1:steps) {
     sess$run(train)

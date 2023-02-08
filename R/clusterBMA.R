@@ -43,7 +43,7 @@ clusterBMA <- function(input_data,cluster_prob_matrices,n_final_clust,prior_weig
 
 
 
-  clusterBMA_use_virtualenv() #specify conda environment to use
+  clusterBMA_use_condaenv() #specify conda environment to use
 
   #coerce input data to data frame
   input_data <- as.data.frame(input_data)
