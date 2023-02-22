@@ -105,8 +105,29 @@ input_probs <- list(km_probs,gmm_probs)
 
 # Run clusterBMA function to combine results from k-means and GMM
 # Need to specify input dataset, list of cluster allocation probability matrices, and the number of final clusters selected
-test_bma_results <- clusterBMA(input_data = test_data, cluster_prob_matrices = input_probs, n_final_clust = 5)
 
+test_bma_results <- clusterBMA(input_data = test_data, cluster_prob_matrices = input_probs, n_final_clust = 5) # list of 6 results outputs - see details below
+
+
+# RESULTS
+
+test_consensus_matrix <- test_bma_results[[1]] # consensus matrix
+test_bma_allocation_probs <- test_bma_results[[2]] # probs of cluster allocation after BMA
+test_bma_cluster_labels_df <- test_bma_results[[3]] # cluster allocations with probability and uncertainty
+test_bma_table <- test_bma_results[[4]] # table - how many in each cluster?
+test_bma_weights <- test_bma_results[[5]] # weights for each algo
+test_bma_weights_times_priors <- test_bma_results[[6]] # weights multiplied by prior probabilities - should be the same as output [5] if prior model weights are set to be equal (default)
+
+
+
+
+
+
+
+
+#----------------
+
+# PLOTTING OUTPUT
 
 # add BMA outputs as columns onto original dataframe
 test_data <- cbind(test_data,test_bma_results[[3]])
@@ -117,6 +138,6 @@ test_plot_BMA_uncertainty <- plot_ly(data=test_data,x=test_data[,1],y=test_data[
 test_plot_BMA_uncertainty
 ```
 ## Example plot showing BMA combined results from k-means and GMM (simulated data)
-### Larger points show greater across-model uncertainty in model averaged cluster allocation
+### Larger points show greater model-based uncertainty in model averaged cluster allocation
 
 ![Example BMA plot - k-means and GMM combined (simulated data)](https://github.com/of2/clusterBMA/blob/main/example_BMA_plot.png?raw=true)
