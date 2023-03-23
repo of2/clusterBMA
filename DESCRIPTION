@@ -1,7 +1,7 @@
 Package: clusterBMA
 Type: Package
 Title: Bayesian Model Averaging for Clustering
-Version: 0.1.1
+Version: 0.2.0
 Author: Owen Forbes
 Maintainer: Owen Forbes <owen.forbes@hdr.qut.edu.au>
 Description: Bayesian model averaging (BMA) for clustering - implements methods in accompanying publication "clusterBMA: Bayesian Model Averaging for Clustering" (CITATION)
