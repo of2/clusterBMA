@@ -56,6 +56,8 @@ clusterBMA::clusterBMA_initial_python_setup()
 
 ## Basic example vignette
 
+After installation, you can view this vignette directly in R using `vignette("clusterBMA_vignette", package = "clusterBMA")`
+
 Once installation is successful, you can run the test code below line-by-line to get an idea of the basic functionality of this package. This example simulates some data from 5 clusters, runs k-means and Gaussian mixture model with K=5, and combines the two results with clusterBMA that includes: model averaging weighted by a novel approximation of posterior model probability; probabilistic combined cluster allocation; and quantification of model-based uncertainty.
 
 The results of each input clustering algorithm need to be represented as a NxK matrix containing probabilities of cluster allocations (datapoints in rows, clusters in columns, each cell represents probability that point i is allocated to cluster k).
