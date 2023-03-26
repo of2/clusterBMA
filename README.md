@@ -14,10 +14,7 @@ Due to dropped support for TensorFlow v1.15 in reticulate and tensorflow package
 
 All code and instructions are provided at https://github.com/of2/clusterBMA
 
-## For any bugs/issues, please email me at owen(dot)forbes(at)hdr.qut.edu.au
-
-##### ALPHA VERSION / WORK IN PROGRESS - this will continue to be iterated and expanded with better documentation, vignettes and bug fixes in the coming months.
-
+## For any bugs, issues or requests, please email me at owen(dot)forbes(at)hdr.qut.edu.au
 
 -----------------------------------------------------------------------------------------
 
