@@ -6,7 +6,7 @@
 #' @param hard_clusters A vector of cluster allocations from a hard clustering algorithm of length N (number of observations in clustered dataset)
 #' @param n_clust The number of clusters, k, in the clustering solution
 #'
-#' @return Returns a N x k
+#' @return Returns a N x k matrix of cluster allocation probabilities, which is used as an input for `clusterBMA::clusterBMA()`
 #' @export
 #'
 #'

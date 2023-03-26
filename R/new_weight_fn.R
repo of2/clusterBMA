@@ -12,6 +12,13 @@
 
 
 # Expects cluster_labels to be data frame with columns of cluster labels from different algorithms (hard projection from soft algos), and n_sols to be the number of solutions input
+
+
+#' Calculate model weights based on Cluster Internal Validation Index (internal function)
+#'
+
+#' @export
+
 new_weight_fn <- function(input_data,cluster_label_df,n_sols,wt_crit_name,wt_crit_direction){
 
   out_df <- data.frame(crit = NA, W_m = NA)

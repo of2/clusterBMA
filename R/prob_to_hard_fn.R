@@ -1,4 +1,7 @@
-# Function to get 'hard' allocations and probability/uncertainty from soft allocation probability matrix ($P output from SimplexClust())
+
+#' (internal function) Generate 'hard' allocations and probability/uncertainty from soft allocation probability matrix ($P output from SimplexClust())
+#' @export
+
 
 prob_to_hard_fn <- function(soft_alloc_matrix){
   alloc_vector <- vector(mode="numeric",length=length(soft_alloc_matrix[,1]))

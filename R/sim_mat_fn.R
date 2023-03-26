@@ -1,5 +1,8 @@
 #cluster_probs should be a probability matrix of cluster membership
 
+#' (internal function) Generate similarity matrix from allocation probability matrix
+#' @export
+
 sim_mat_fn <- function(cluster_probs){
 
   # starting as a for loop - can try vectorising later if it's too slow

@@ -4,6 +4,12 @@
 library(reticulate)
 library(tensorflow)
 
+#' Set up Conda environment using `miniconda` with Python and Tensorflow (Run once on first install)
+#'
+#' @return Sets up conda environment with Python and Tensorflow
+#' @export
+#'
+
 clusterBMA_initial_python_setup <- function(){
 
   # NEED TO CHECK IF MINICONDA IS INSTALLED HERE

@@ -1,4 +1,9 @@
+#' Generate consensus matrix from input similarity matrices, and calculate key outputs (internal function)
+#'
 
+#' @export
+#'
+#'
 consensus_matrix_fn <- function(sim_mat_list,algo_weights,n_final_clust,prior_vec){
 
   # stack similarity matrices into array

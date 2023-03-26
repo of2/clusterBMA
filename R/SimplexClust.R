@@ -12,6 +12,16 @@
 
 
 
+#' (internal function) Symmetric Simplex Matrix Factorisation using Tensorflow
+#' Generate model averaged clusters and allocations based on consensus matrix
+#'
+#' @param S an n x n consensus matrix
+#' @param G number of clusters
+#' @param lambda the amount of L2 regularization (1 by default)
+#' @param steps number of iterations (more = marginally better convergence. Mostly seems to converge after ~2000 steps (original default))
+#'
+#' @export
+#'
 SimplexClust<- function(S, G, lambda = 1, eps= 1E-2,steps=5000, choice_loss = "KL"){
 #
 #   reticulate::use_condaenv(condaenv = "clusterBMA-pyenv", required = TRUE)
