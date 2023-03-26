@@ -19,3 +19,4 @@ Imports:
     clusterCrit,
     Hmisc,
     pheatmap
+RoxygenNote: 7.2.3
