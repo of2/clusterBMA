@@ -33,7 +33,7 @@ consensus_matrix_fn <- function(sim_mat_list,algo_weights,n_final_clust,prior_ve
   consensus_matrix_heatmap <- pheatmap::pheatmap(consensus_matrix, treeheight_row = 0, treeheight_col = 0, main = "BMA - Consensus matrix")
 
 
-  consensus_SSMF <- SimplexClust(S=consensus_matrix,G=5)
+  consensus_SSMF <- SimplexClust(S=consensus_matrix,G=n_final_clust)
 
   bma_probs <- consensus_SSMF[[1]]
 
